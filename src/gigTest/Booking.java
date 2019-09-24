@@ -23,12 +23,12 @@ public class Booking {
 	@Test(priority=1)
 	public void bookTicket() throws InterruptedException {
 //		driver.findElement(By.xpath("(//span[@id='mClose'])[2]")).click();
-		Thread.sleep(2000);
+		Thread.sleep(3000);
 		WebElement departureField = driver.findElement(By.xpath("//div[@id='bookBusWidget']/div[2]/div/div/div/span/span/span/span[2]/b"));
 		departureField.click();
 		WebElement departureState = driver.findElement(By.xpath("//option[contains(text(),'Lagos => Iyana Ipaja')]"));
 		departureState.click();
-		Thread.sleep(5000);
+		Thread.sleep(4000);
 		WebElement arrivalField =driver.findElement(By.xpath("//select[@id='ContentPlaceHolder2_ddlto']"));
 		arrivalField.click();
 		WebElement arrivalState = driver.findElement(By.xpath("//option[contains(text(),'Akwa Ibom-Uyo')]"));
@@ -38,14 +38,14 @@ public class Booking {
 		date.click();
 		WebElement day = driver.findElement(By.xpath("//td[@class='day'][contains(text(),'26')]"));
 		day.click();
-		Thread.sleep(3000);
+		Thread.sleep(4000);
 		WebElement seat = driver.findElement(By.xpath("//select[@id='ContentPlaceHolder2_ddltickets']"));
 		seat.click();
 		WebElement noSeat = driver.findElement(By.xpath("//div[contains(@class,'form-group col-md-1 col-sm-1 col-xs-12 small-inputs')]//option[1]"));
 		noSeat.click();
 		WebElement bookBtn =driver.findElement(By.xpath("//input[@id='ContentPlaceHolder2_Button1']"));
 		bookBtn.click();
-		Thread.sleep(12000);
+		Thread.sleep(10000);
 	}
 	@Test(priority=2)
 	public void selectSeat() throws InterruptedException {
@@ -56,10 +56,10 @@ public class Booking {
 		seatNo.click();
 		WebElement continueBtn = driver.findElement(By.xpath("//a[@id='ContentPlaceHolder2_lvbus_lnkbook_0']"));
 		continueBtn.click();
-		Thread.sleep(3000);
+		Thread.sleep(2000);
 		WebElement skipLogin =driver.findElement(By.linkText("Continue without Login"));
 		skipLogin.click();
-		Thread.sleep(3000);
+		Thread.sleep(2000);
 	}
 
 	@Test(priority=3)
@@ -83,12 +83,12 @@ public class Booking {
 	    kinName.sendKeys("gbenga");
 	    WebElement kinPhone=driver.findElement(By.id("ContentPlaceHolder2_txtnextofkinphone1"));
 	    kinPhone.sendKeys("09067568764");
-	    Thread.sleep(5000);
+	    Thread.sleep(4000);
 
 	    WebElement unionBankUssd=driver.findElement(By.xpath("//*[@id=\"lnkbtnUbnUssd2\"]/img"));
 	    unionBankUssd.click();
 	    
-	    Thread.sleep(7000);
+	    Thread.sleep(4000);
 	}
 
 	@AfterTest
