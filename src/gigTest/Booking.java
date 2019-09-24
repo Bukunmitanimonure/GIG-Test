@@ -13,6 +13,7 @@ import org.testng.annotations.Test;
 public class Booking {
 		WebDriver driver;
 	@BeforeTest
+	//lauch chrome browser
 	public void openBrowser() {
 		System.setProperty("webdriver.chrome.driver", "C:\\GIG\\Drivers\\chromedriver.exe");
 		driver = new ChromeDriver();
@@ -20,6 +21,7 @@ public class Booking {
 		driver.manage().window().maximize();
 	}
 
+	//select arival and departure details
 	@Test(priority=1)
 	public void bookTicket() throws InterruptedException {
 //		driver.findElement(By.xpath("(//span[@id='mClose'])[2]")).click();
@@ -47,6 +49,8 @@ public class Booking {
 		bookBtn.click();
 		Thread.sleep(10000);
 	}
+	
+	//select seat
 	@Test(priority=2)
 	public void selectSeat() throws InterruptedException {
 		WebElement viewSeat = driver.findElement(By.xpath("//div[@class='row ng-scope']//div[1]//div[1]//div[1]//div[5]//button[1]"));
@@ -61,7 +65,8 @@ public class Booking {
 		skipLogin.click();
 		Thread.sleep(2000);
 	}
-
+	
+	//enter personal details and payment
 	@Test(priority=3)
 	public void passengerDetails() throws InterruptedException {
 		WebElement pickUp = driver.findElement(By.xpath("//input[@id='pickupNo']"));
@@ -90,7 +95,8 @@ public class Booking {
 	    
 	    Thread.sleep(4000);
 	}
-
+	
+	//close browser
 	@AfterTest
 	public void closeBrowser() {
 		driver.close();
